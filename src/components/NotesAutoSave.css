@@ -4,6 +4,19 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #f5f7fb;
+  color: #111;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+body.dark {
+  background: #0f0f15;
+  color: #e6e6e6;
+}
+
 
 .notes-container {
   max-width: 600px;
@@ -67,4 +80,130 @@
 
 .notes-container button:active {
   transform: translateY(0);
+}
+
+.notes-container.dark {
+  background: #1e1e2a;
+  color: #e6e6e6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.notes-container.dark h2 {
+  color: #f1f1f1;
+}
+
+.notes-container.dark textarea {
+  background: #2a2a36;
+  color: #eaeaea;
+  border: 1px solid #3a3a47;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.notes-container textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  resize: none;
+  outline: none;
+}
+
+/* ensure buttons and other UI match global theme */
+body.dark .notes-container {
+  background: #161620;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+
+body.dark .notes-container button {
+  box-shadow: none;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.actions .add {
+  flex: 1 1 auto;
+  background: linear-gradient(135deg, #6c63ff, #4b39ff);
+}
+
+.actions .clear {
+  flex: 1 1 auto;
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+}
+
+.notes-list {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.note-item {
+  padding: 12px;
+  border-radius: 10px;
+  background: #fafafa;
+  border: 1px solid #eee;
+}
+
+.notes-container.dark .note-item {
+  background: #262632;
+  border: 1px solid #333;
+}
+
+.note-text {
+  white-space: pre-wrap;
+  margin-bottom: 8px;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-footer small {
+  color: #777;
+}
+
+.notes-container.dark .note-footer small {
+  color: #bfbfbf;
+}
+
+.note-footer .delete {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.empty {
+  color: #777;
+  text-align: center;
 }
